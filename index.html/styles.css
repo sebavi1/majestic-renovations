@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majestic Renovations</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Dim background */
+            z-index: -1;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .active-tab {
+            display: block;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Majestic Renovations Logo" width="150">
+        </div>
+        <h1>Majestic Renovations</h1>
+        <p>"Bringing Your Vision to Life"</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="showTab('home')">Home</a></li>
+            <li><a href="#services" onclick="showTab('services')">Services</a></li>
+            <li><a href="#gallery" onclick="showTab('gallery')">Gallery</a></li>
+            <li><a href="#contact" onclick="showTab('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="tab-content active-tab">
+        <h2>Welcome to Majestic Renovations</h2>
+        <p>Providing high-quality remodeling services to bring your vision to life.</p>
+        <h3>About Us</h3>
+        <p>At Majestic Renovation, we specialize in all types of home renovations, delivering high-quality craftsmanship and attention to detail. Our goal is to transform houses into dream homes, ensuring customer satisfaction every step of the way.</p>
+    </section>
+
+    <section id="services" class="tab-content">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Home Remodeling</li>
+            <li>Kitchen & Bathroom Renovations</li>
+            <li>Flooring & Painting</li>
+            <li>Roofing</li>
+            <li>Custom Carpentry</li>
+        </ul>
+    </section>
+
+    <section id="gallery" class="tab-content">
+        <h2>Before and After Pictures</h2>
+        <div class="gallery-container">
+            <img src="images/project1.jpg" alt="Project 1" width="200">
+            <img src="images/project2.jpg" alt="Project 2" width="200">
+            <img src="images/project3.jpg" alt="Project 3" width="200">
+            <img src="images/project4.jpg" alt="Project 4" width="200">
+            <img src="images/project5.jpg" alt="Project 5" width="200">
+            <img src="images/project6.jpg" alt="Project 6" width="200">
+            <img src="images/project7.jpg" alt="Project 7" width="200">
+            <img src="images/project8.jpg" alt="Project 8" width="200">
+            <img src="images/project9.jpg" alt="Project 9" width="200">
+        </div>
+    </section>
+
+    <section id="contact" class="tab-content">
+        <h2>Contact Us</h2>
+        <p>Phone: <a href="tel:5128486495">512-749-3967</a></p>
+        <p>Email: <a href="mailto:majesticrenovation1@gmail.com">majesticrenovation1@gmail.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Majestic Renovations. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/majestic_renovation" target="_blank">Follow us on Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+            document.getElementById(tabId).classList.add('active-tab');
+        }
+    </script>
+</body>
+</html>
